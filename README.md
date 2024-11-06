@@ -40,7 +40,7 @@
 
 ---
 ## 클래스 UML
-![HorseRace_UML(Class)](https://github.com/user-attachments/assets/4f224458-30a1-4824-a5e5-fef99a1cd162)
+![HorseRace_UML(Class)](https://github.com/Yeop9999/Java_Mini_Project_HorseRace/blob/main/HorseRace_UML(class).drawio.png)
 
 ---
 ## 게임 화면
