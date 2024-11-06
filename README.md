@@ -31,7 +31,7 @@
   }
 
 
-#### 유령
+#### 
 
 
 ####
@@ -40,7 +40,7 @@
 
 ---
 ## 클래스 UML
-![Pacman_UML(Class)](https://github.com/user-attachments/assets/4f224458-30a1-4824-a5e5-fef99a1cd162)
+![HorseRace_UML(Class)](https://github.com/user-attachments/assets/4f224458-30a1-4824-a5e5-fef99a1cd162)
 
 ---
 ## 게임 화면
