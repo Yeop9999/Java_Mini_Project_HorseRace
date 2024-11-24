@@ -26,8 +26,9 @@
 #### 날씨 랜덤 생성 및 속도 변화 
 - 랜덤 날씨 생성: 맑음, 비, 바람 세 가지 날씨 상태가 랜덤으로 결정됩니다.
 - 속도 조정: 맑음,비,바람 날씨에 따라 경주마의 속도가 달라집니다.
-- 
-public void moveHorses() {
+  
+    ```
+   public void moveHorses() {
     Random random = new Random();
 
     for (Horse horse : horses) {
@@ -53,12 +54,17 @@ public void moveHorses() {
             }
         }
     }
-}
+  }
+
+
+---
+
 
 #### 경주마 이동 및  결승선 도달 체크
 - 경주마 이동:move(int distance) 메서드는 경주마의 위치를 600에서부터 왼쪽으로 이동시키는 방식으로 경주마의 이동을 처리합니다.
-  
- public class Horse {
+
+
+    ``` public class Horse {
     private String name;
     private int position;
 
@@ -74,47 +80,45 @@ public void moveHorses() {
     public int getPosition() {
         return position;
     }
-}
+   }
+
 
 - 결승선 도달 체크: 경주마가 결승선(50)에 도달하면, 그 경주마는 finishedHorses 목록에 추가됩니다.
 
-    ''' 
-                if (horse.getPosition() <= 50 && !finishedHorses.contains(horse)) {
-                    finishedHorses.add(horse);
+     ```
+    if (horse.getPosition() <= 50 && !finishedHorses.contains(horse)) {
+   finishedHorses.add(horse);
                 }
             }
         }
-    }
-
+     }
     public boolean isRaceFinished() {
         return finishedHorses.size() >= 3; // 결승선에 도달한 경주마 3명
     }
-  
- public List<Horse> getFinishedHorses() {
+    public List<Horse> getFinishedHorses() {
         return finishedHorses;
     }
-}
-
+    
 
 #### 경주마 예측 순위 입력
 - 1,2,3위를 예측하여 입력
-  
-   predictionBoxes = new JComboBox[3]; 
-String[] horseNames = new String[horses.length]; 
-
-for (int i = 0; i < horses.length; i++) { 
+ 
+  ```  predictionBoxes = new JComboBox[3]; 
+  String[] horseNames = new String[horses.length]; 
+ 
+  ```for (int i = 0; i < horses.length; i++) { 
     horseNames[i] = horses[i].getName(); 
-}
-
-for (int i = 0; i < 3; i++) { 
+  }
+  for (int i = 0; i < 3; i++) { 
     add(new JLabel((i + 1) + "위 예측:")); 
     predictionBoxes[i] = new JComboBox<>(horseNames); 
     add(predictionBoxes[i]); 
-}
+  }
+
 
 - 중복입력 방지
 
-private boolean validateSelections() {  
+  ``` private boolean validateSelections() {  
     for (int i = 0; i < predictionBoxes.length; i++) {  
         for (int j = i + 1; j < predictionBoxes.length; j++) {  
             if (predictionBoxes[i].getSelectedIndex() == predictionBoxes[j].getSelectedIndex()) {  
@@ -123,12 +127,16 @@ private boolean validateSelections() {
         }  
     }  
     return true;  
-}
+  
+
+---
+
 
 
 #### 게임 UI
 - 예측 입력 및 확인, 취소 버튼
-- public BettingDialog(JFrame parent, Horse[] horses) {
+
+    ``` public BettingDialog(JFrame parent, Horse[] horses) {
         super(parent, "경주 예측", true);
         setSize(200, 300);
         setLayout(new GridLayout(4, 2));
@@ -174,7 +182,7 @@ private boolean validateSelections() {
         add(cancelButton);
     }
   
-- 
+
 ---
 ## 클래스 UML
 ![HorseRace_UML(Class)](https://github.com/Yeop9999/Java_Mini_Project_HorseRace/blob/main/HorseRace_UML(class).drawio.png)
